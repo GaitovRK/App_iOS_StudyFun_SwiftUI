@@ -17,20 +17,6 @@ struct ContentView: View {
             
             PlayerScrollView(data: self.$data)
             
-//            TabView {
-//                ForEach(VideoModel.sampleData) {video in
-//                    ZStack {
-//                        Color(.red)
-//                        Text(String(video.id))
-//                            .foregroundColor(.white)
-//                            .font(.title)
-//                    }
-//                }
-//            }
-//            .tabViewStyle(.page)
-//            .cornerRadius(30)
-//            .padding(.top, 30)
-            
             VStack {
                 
                 HStack {

@@ -117,6 +117,7 @@ struct PlayerScrollView : View {
         .tabViewStyle(.page)
         .cornerRadius(30)
         .padding(.top, 30)
+        .padding(.bottom, 50)
         
     }
 }
