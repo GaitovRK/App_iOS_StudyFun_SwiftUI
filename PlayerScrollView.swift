@@ -110,20 +110,54 @@ struct PlayerScrollView : View {
     
     var body: some View {
         
-        ZStack {
-            TabView {
-                ForEach(VideoModel.sampleData) {video in
-                    VideoPlayer(player: video.player)
+        TabView {
+            ForEach(0..<self.data.count) {i in
+                
+                ZStack {
+                    VideoPlayer(player: data[i].player)
+                        .scaledToFill()
+                        .onAppear {
+                            
+                            // doing it for first video because scrollview didnt dragged yet...
+                            
+                            self.data[i].player.play()
+                            
+                            self.data[i].player.actionAtItemEnd = .none
+                            
+                            NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.data[i].player.currentItem, queue: .main) { (_) in
+                                
+                                // notification to identify at the end of the video...
+                                
+                                // enabling replay button....
+                                self.data[i].replay = true
+                            }
+                        }
+                        
+                    if self.data[i].replay{
+                        
+                        Button(action: {
+                            
+                            // playing the video again...
+                            
+                            self.data[i].replay = false
+                            self.data[i].player.seek(to: .zero)
+                            self.data[i].player.play()
+                            
+                        }) {
+                            
+                            Image(systemName: "goforward")
+                            .resizable()
+                            .frame(width: 55, height: 60)
+                            .foregroundColor(.white)
+                        }
+                    }
                 }
             }
-            .tabViewStyle(.page)
-            .cornerRadius(30)
-            .padding(.top, 30)
-            .padding(.bottom, 50)
-            
         }
-        
-       
+        .tabViewStyle(.page)
+        .cornerRadius(30)
+        .padding(.top, 30)
+        .padding(.bottom, 50)
         
     }
 }

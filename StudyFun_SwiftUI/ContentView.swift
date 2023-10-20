@@ -25,7 +25,7 @@ struct ContentView: View {
                     } label: {
                         Image(systemName: "house.circle.fill")
                             .foregroundColor(.white)
-                            .font(.system(size: 48))
+                            .font(.system(size: 36))
                     }
                     
                     Spacer()
@@ -34,7 +34,7 @@ struct ContentView: View {
                         self.top = 1
                     } label: {
                         Image(systemName: "star.circle.fill")
-                            .font(.system(size: 48))
+                            .font(.system(size: 36))
                             .foregroundColor(.white)
                     }
                 }
@@ -52,7 +52,7 @@ struct ContentView: View {
                         } label: {
                             Image(systemName: "heart.fill")
                                 .foregroundColor(.white)
-                                .font(.system(size: 48))
+                                .font(.system(size: 36))
                         }
                                                 
                         Button {
@@ -60,7 +60,7 @@ struct ContentView: View {
                         } label: {
                             Image(systemName: "questionmark.bubble.fill")
                                 .foregroundColor(.white)
-                                .font(.system(size: 48))
+                                .font(.system(size: 36))
                         }
                     }
                 }
