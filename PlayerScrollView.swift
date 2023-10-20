@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-
+import AVKit
 
 //struct PlayerScrollView : UIViewRepresentable {
 //    
@@ -109,15 +109,21 @@ struct PlayerScrollView : View {
     @Binding var data : [VideoModel]
     
     var body: some View {
-        TabView {
-            ForEach(VideoModel.sampleData) {video in
-                PlayerView(data: $data)
+        
+        ZStack {
+            TabView {
+                ForEach(VideoModel.sampleData) {video in
+                    VideoPlayer(player: video.player)
+                }
             }
+            .tabViewStyle(.page)
+            .cornerRadius(30)
+            .padding(.top, 30)
+            .padding(.bottom, 50)
+            
         }
-        .tabViewStyle(.page)
-        .cornerRadius(30)
-        .padding(.top, 30)
-        .padding(.bottom, 50)
+        
+       
         
     }
 }

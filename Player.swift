@@ -20,7 +20,6 @@ struct Player : UIViewControllerRepresentable {
         view.showsPlaybackControls = false
         view.videoGravity = .resizeAspectFill
         return view
-        
     }
     
     func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {
