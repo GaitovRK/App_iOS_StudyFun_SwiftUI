@@ -13,10 +13,10 @@ struct QuizView: View {
     
     var body: some View {
         ZStack {
-            Image("")
-                .resizable()
-                .aspectRatio(contentMode: ContentMode.fill)
-                .ignoresSafeArea()
+//            Image("")
+//                .resizable()
+//                .aspectRatio(contentMode: ContentMode.fill)
+//                .ignoresSafeArea()
             
             LinearGradient(colors: [Colors.Menu.greenBackground, Colors.Menu.background], startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
@@ -54,8 +54,6 @@ struct QuizView: View {
                 
                 OptionsGridView(quizManagerVM: quizManagerVM)
             }
-            
-            
         }
     }
 }
@@ -75,7 +73,7 @@ struct QuizTextView: View {
         Text(text)
             .font(.system(size: size, weight: .bold, design: .rounded))
             .foregroundColor(.white)
-            .shadow(color: Color.purple, radius: 2, x: 0, y: 3)
+            .shadow(color: Colors.Menu.icon, radius: 2, x: 0, y: 0)
     }
 }
 

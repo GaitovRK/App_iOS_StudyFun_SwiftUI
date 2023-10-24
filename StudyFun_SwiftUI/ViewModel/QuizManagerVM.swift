@@ -45,7 +45,7 @@ class QuizManagerVM: ObservableObject {
                     } else {
                         self.model.quizCompleted = true
                         self.model.quizWinningStatus = true
-//                        self.reset()
+                        self.reset()
                     }
                 }
             } else {
@@ -59,26 +59,26 @@ class QuizManagerVM: ObservableObject {
         
     }
     
-//    func restartGame() {
-//            GameManagerVM.currentIndex = 0
-//            model = GameManagerVM.createGameModel(i: GameManagerVM.currentIndex)
-//            self.start()
-//        }
-//
-//        func start() {
-//            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats:true, block: { time in
-//                if self.progress == self.maxProgress {
-//                    self.model.quizCompleted = true
-//                    self.model.quizWinningStatus = false
-//                    self.reset()
-//                } else {
-//                    self.progress += 1
-//                }
-//            })
-//        }
-//
-//        func reset () {
-//            timer.invalidate()
-//            self.progress = 0
-//        }
+    func restartGame() {
+            QuizManagerVM.currentIndex = 0
+            model = QuizManagerVM.createGameModel(i: QuizManagerVM.currentIndex)
+            self.start()
+    }
+
+    func start() {
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats:true, block: { time in
+            if self.progress == self.maxProgress {
+                self.model.quizCompleted = true
+                self.model.quizWinningStatus = false
+                self.reset()
+            } else {
+                self.progress += 1
+            }
+        })
+    }
+
+    func reset () {
+        timer.invalidate()
+        self.progress = 0
+    }
 }
