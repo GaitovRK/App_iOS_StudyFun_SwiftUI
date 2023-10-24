@@ -93,6 +93,8 @@ struct Colors {
     struct SideMenu {
         static let background = Color(red: 30/255.0, green: 30/255.0, blue: 45/255.0)
         static let itemBackground = Color(red: 42/255.0, green: 42/255.0, blue: 60/255.0)
+        static let icon = Color(red: 80/255.0, green: 80/255.0, blue: 96/255.0)
+        static let iconBackground = Color(red: 197/255.0, green: 197/255.0, blue: 216/255.0)
     }
     
     
