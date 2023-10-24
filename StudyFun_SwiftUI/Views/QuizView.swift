@@ -10,7 +10,6 @@ import SwiftUI
 struct QuizView: View {
     @ObservedObject var quizManagerVM: QuizManagerVM
     
-    
     var body: some View {
         ZStack {
 //            Image("")
@@ -35,23 +34,24 @@ struct QuizView: View {
                 
                 ZStack {
                     Circle()
-                        .stroke(lineWidth: 5)
+                        .stroke(lineWidth: 15)
                         .foregroundColor(Colors.Menu.iconSecondary)
 //                        .opacity()
                     
                     Circle()
-                        .trim(from: 0.0, to: min(CGFloat((Double(quizManagerVM.progress) * Double(quizManagerVM.maxProgress))/100),1.0))
+                        .trim(from: 0.0, to: min(CGFloat(quizManagerVM.progress), 1.0))
+//                        .trim(from: 0.0, to: min(CGFloat((Double(quizManagerVM.progress) * Double(quizManagerVM.maxProgress))/100),1.0))
 
-                        .stroke(LinearGradient(colors: [Colors.Menu.icon],
-                                               startPoint: .topLeading,
-                                               endPoint: .bottomTrailing),
-                                style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
+                        .stroke(LinearGradient(
+                            colors: [Colors.Menu.iconSecondary, Colors.Menu.icon],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing),
+                            style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
                         .rotationEffect(Angle(degrees: 270))
                         .animation(Animation.linear(duration: Double(quizManagerVM.maxProgress)), value: quizManagerVM.progress)
                     
                     QuizTextView(size: 40, text: String(quizManagerVM.progress))
                 }.frame(width: 150, height: 150)
-                
                 
                 Spacer()
                 

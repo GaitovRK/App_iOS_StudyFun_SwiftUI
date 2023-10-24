@@ -13,14 +13,18 @@ class QuizManagerVM: ObservableObject {
     
     static var currentIndex = 0
 
-    @Published var model = QuizManagerVM.createGameModel(i: QuizManagerVM.currentIndex)
+    @Published var model = QuizManagerVM.createQuizModel(i: QuizManagerVM.currentIndex)
     @Published var progress = 0
 
     var timer = Timer()
     var maxProgress = 15
     
-    static func createGameModel(i:Int) -> QuizModel {
+    static func createQuizModel(i:Int) -> QuizModel {
         return QuizModel(currentQuestionIndex: i, questionModel: QuizModel.data[i])
+    }
+    
+    init() {
+        self.start()
     }
     
     func verifyAnswer(selectedOption: QuizOption) {
@@ -36,7 +40,7 @@ class QuizManagerVM: ObservableObject {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     if (QuizManagerVM.currentIndex < 2) {
                         QuizManagerVM.currentIndex = QuizManagerVM.currentIndex + 1
-                        self.model = QuizManagerVM.createGameModel(i: QuizManagerVM.currentIndex)
+                        self.model = QuizManagerVM.createQuizModel(i: QuizManagerVM.currentIndex)
                     } else {
                         self.model.quizCompleted = true
                         self.model.quizWinningStatus = true
@@ -44,19 +48,15 @@ class QuizManagerVM: ObservableObject {
                     }
                 }
             } else {
-                print("inside else ")
-
                 model.questionModel.optionsList[index].isMatched = false
                 model.questionModel.optionsList[index].isSelected = true
             }
-            
         }
-        
     }
     
     func restartGame() {
             QuizManagerVM.currentIndex = 0
-            model = QuizManagerVM.createGameModel(i: QuizManagerVM.currentIndex)
+            model = QuizManagerVM.createQuizModel(i: QuizManagerVM.currentIndex)
             self.start()
     }
 

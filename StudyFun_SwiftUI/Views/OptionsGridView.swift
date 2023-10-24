@@ -77,7 +77,8 @@ struct OptionStatusImageView: View {
     var body: some View {
         Image(systemName: imageName)
             .resizable()
-            .aspectRatio(contentMode: .fit)
+            .frame(width: 50, height: 50)
+//            .aspectRatio(contentMode: .fit)
             .padding(EdgeInsets(top: 40, leading: 40, bottom: 40, trailing: 40))
             .foregroundColor(Color.white)
     }
