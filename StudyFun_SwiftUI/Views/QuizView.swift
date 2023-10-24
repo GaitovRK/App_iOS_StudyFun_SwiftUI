@@ -18,8 +18,11 @@ struct QuizView: View {
                 .aspectRatio(contentMode: ContentMode.fill)
                 .ignoresSafeArea()
             
-            LinearGradient(colors: [.red.opacity(0.4), .blue.opacity(0.4)], startPoint: .topLeading, endPoint: .bottomTrailing)
+            Colors.Menu.greenBackground
                 .ignoresSafeArea()
+            
+//            LinearGradient(colors: [.red.opacity(0.4), .blue.opacity(0.4)], startPoint: .topLeading, endPoint: .bottomTrailing)
+//                .ignoresSafeArea()
             
             VStack {
                 QuizTextView(size: 30, text: "Mid Quiz")
@@ -77,4 +80,23 @@ struct QuizTextView: View {
             .foregroundColor(.white)
             .shadow(color: Color.purple, radius: 2, x: 0, y: 3)
     }
+}
+
+
+struct Colors {
+    
+    struct Menu {
+        static let icon = Color(red: 227/255.0, green: 8/255.0, blue: 24/255.0)
+        static let iconSecondary = Color(red: 249/255.0, green: 182/255.0, blue: 184/255.0)
+        static let background = Color(red: 244/255.0, green: 247/255.0, blue: 249/255.0)
+        static let text = Color(red: 63/255.0, green: 66/255.0, blue: 84/255.0)
+        static let greenBackground = Color(red: 64/255.0, green: 199/255.0, blue: 126/255.0)
+    }
+    
+    struct SideMenu {
+        static let background = Color(red: 30/255.0, green: 30/255.0, blue: 45/255.0)
+        static let itemBackground = Color(red: 42/255.0, green: 42/255.0, blue: 60/255.0)
+    }
+    
+    
 }
