@@ -39,7 +39,7 @@ struct OptionCardView : View {
         }.frame(width: 150, height: 150)
             .background(setBackgroundColor())
             .cornerRadius(40)
-            .shadow(radius: 10)
+            .shadow(radius: 20)
     }
     
     func setBackgroundColor() -> Color {

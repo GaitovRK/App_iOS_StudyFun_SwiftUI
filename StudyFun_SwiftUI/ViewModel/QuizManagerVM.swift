@@ -14,10 +14,10 @@ class QuizManagerVM: ObservableObject {
     static var currentIndex = 0
 
     @Published var model = QuizManagerVM.createGameModel(i: QuizManagerVM.currentIndex)
+    @Published var progress = 0
 
     var timer = Timer()
     var maxProgress = 15
-    @Published var progress = 0
     
     static func createGameModel(i:Int) -> QuizModel {
         return QuizModel(currentQuestionIndex: i, questionModel: QuizModel.data[i])
@@ -29,17 +29,12 @@ class QuizManagerVM: ObservableObject {
             model.questionModel.optionsList[index].isSelected = false
         }
         if let index = model.questionModel.optionsList.firstIndex(where: {$0.optionId == selectedOption.optionId}) {
-            print("Selected item ")
             if selectedOption.optionId ==  model.questionModel.answer {
                 model.questionModel.optionsList[index].isMatched = true
                 model.questionModel.optionsList[index].isSelected = true
-                print("inside 1 if ")
-
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     if (QuizManagerVM.currentIndex < 2) {
-                        print("inside 2 if ")
-
                         QuizManagerVM.currentIndex = QuizManagerVM.currentIndex + 1
                         self.model = QuizManagerVM.createGameModel(i: QuizManagerVM.currentIndex)
                     } else {
