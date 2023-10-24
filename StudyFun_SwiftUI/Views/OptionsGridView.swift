@@ -39,6 +39,7 @@ struct OptionCardView : View {
         }.frame(width: 150, height: 150)
             .background(setBackgroundColor())
             .cornerRadius(40)
+            .shadow(radius: 10)
     }
     
     func setBackgroundColor() -> Color {
@@ -64,8 +65,8 @@ struct OptionView: View {
                 .cornerRadius(25)
             
             Text(quizOption.option)
-                .frame(width: 150, height: 38)
-                .font(.system(size: 20, weight: .bold, design: .rounded))
+                .frame(width: 150, height: 50)
+                .font(.system(size: 18, weight: .bold, design: .rounded))
                 .lineLimit(2)
         }
     }
@@ -79,5 +80,14 @@ struct OptionStatusImageView: View {
             .aspectRatio(contentMode: .fit)
             .padding(EdgeInsets(top: 40, leading: 40, bottom: 40, trailing: 40))
             .foregroundColor(Color.white)
+    }
+}
+
+
+struct MyPreviewProvider_Previews: PreviewProvider {
+    static var previews: some View {
+        OptionsGridView(quizManagerVM: QuizManagerVM())
+            .padding()
+            .background(Color.gray)
     }
 }

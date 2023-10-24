@@ -74,9 +74,16 @@ struct QuizCompletedView: View {
 
 
             }
+            
+            .navigationBarItems(
+                leading: Button(action: {
+                    //Go to main screen
+                }, label: {
+                    Image(systemName: "multiply")
+                        .foregroundColor(.black)
+                })
+            )
         }
-        
-        
     }
 }
 
