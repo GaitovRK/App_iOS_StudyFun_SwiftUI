@@ -18,11 +18,8 @@ struct QuizView: View {
                 .aspectRatio(contentMode: ContentMode.fill)
                 .ignoresSafeArea()
             
-            Colors.Menu.greenBackground
+            LinearGradient(colors: [Colors.Menu.greenBackground, Colors.Menu.background], startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
-            
-//            LinearGradient(colors: [.red.opacity(0.4), .blue.opacity(0.4)], startPoint: .topLeading, endPoint: .bottomTrailing)
-//                .ignoresSafeArea()
             
             VStack {
                 QuizTextView(size: 30, text: "Mid Quiz")
