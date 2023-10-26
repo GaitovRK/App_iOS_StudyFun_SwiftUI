@@ -115,7 +115,7 @@ struct PlayerScrollView : View {
                 
                 ZStack {
                     VideoPlayer(player: data[i].player)
-                        .scaledToFill()
+                        .aspectRatio(contentMode: .fill)
                         .onAppear {
                             
                             // doing it for first video because scrollview didnt dragged yet...

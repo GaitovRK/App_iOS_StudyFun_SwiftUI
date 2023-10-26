@@ -45,6 +45,7 @@ class QuizManagerVM: ObservableObject {
                         self.model.quizCompleted = true
                         self.model.quizWinningStatus = true
                         self.reset()
+                        
                     }
                 }
             } else {

@@ -22,41 +22,46 @@ struct QuizView: View {
             Colors.Menu.greenBackground
                 .ignoresSafeArea()
             
-            VStack {
-                QuizTextView(size: 30, text: "Knowledge Check")
-                
-                QuizTextView(size: 22, text:quizManagerVM.model.questionModel.question)
-                    .lineLimit(3)
-                    .frame(width: UIScreen.main.bounds.size.width - 20, height: 60, alignment: .center)
-                    .multilineTextAlignment(.center)
-                
-                Spacer()
-                
-                ZStack {
-                    Circle()
-                        .stroke(lineWidth: 15)
-                        .foregroundColor(Colors.Menu.iconSecondary)
-//                        .opacity()
+            if quizManagerVM.model.quizCompleted {
+                QuizCompletedView(quizManagerVM: quizManagerVM)
+            } else {
+                VStack {
+                    QuizTextView(size: 30, text: "Knowledge Check")
                     
-                    Circle()
-                        .trim(from: 0.0, to: min(CGFloat(quizManagerVM.progress), 1.0))
-//                        .trim(from: 0.0, to: min(CGFloat((Double(quizManagerVM.progress) * Double(quizManagerVM.maxProgress))/100),1.0))
+                    QuizTextView(size: 22, text:quizManagerVM.model.questionModel.question)
+                        .lineLimit(3)
+                        .frame(width: UIScreen.main.bounds.size.width - 20, height: 60, alignment: .center)
+                        .multilineTextAlignment(.center)
+                    
+                    Spacer()
+                    
+                    ZStack {
+                        Circle()
+                            .stroke(lineWidth: 15)
+                            .foregroundColor(Colors.Menu.iconSecondary)
+    //                        .opacity()
+                        
+                        Circle()
+                            .trim(from: 0.0, to: min(CGFloat(quizManagerVM.progress), 1.0))
+    //                        .trim(from: 0.0, to: min(CGFloat((Double(quizManagerVM.progress) * Double(quizManagerVM.maxProgress))/100),1.0))
 
-                        .stroke(LinearGradient(
-                            colors: [Colors.Menu.iconSecondary, Colors.Menu.icon],
-                            startPoint: .topLeading,
-                            endPoint: .bottomTrailing),
-                            style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
-                        .rotationEffect(Angle(degrees: 270))
-                        .animation(Animation.linear(duration: Double(quizManagerVM.maxProgress)), value: quizManagerVM.progress)
+                            .stroke(LinearGradient(
+                                colors: [Colors.Menu.iconSecondary, Colors.Menu.icon],
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing),
+                                style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round))
+                            .rotationEffect(Angle(degrees: 270))
+                            .animation(Animation.linear(duration: Double(quizManagerVM.maxProgress)), value: quizManagerVM.progress)
+                        
+                        QuizTextView(size: 40, text: String(quizManagerVM.progress))
+                    }.frame(width: 150, height: 150)
                     
-                    QuizTextView(size: 40, text: String(quizManagerVM.progress))
-                }.frame(width: 150, height: 150)
-                
-                Spacer()
-                
-                OptionsGridView(quizManagerVM: quizManagerVM)
+                    Spacer()
+                    
+                    OptionsGridView(quizManagerVM: quizManagerVM)
+                }
             }
+            
         }
     }
 }

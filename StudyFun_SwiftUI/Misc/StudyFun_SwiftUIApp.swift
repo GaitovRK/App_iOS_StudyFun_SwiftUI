@@ -11,7 +11,7 @@ import SwiftUI
 struct StudyFun_SwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
-            QuizView(quizManagerVM: QuizManagerVM())
+            ContentView()
         }
     }
 }

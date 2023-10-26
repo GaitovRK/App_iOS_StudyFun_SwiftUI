@@ -14,18 +14,14 @@ struct ContentView: View {
         
     var body: some View {
         ZStack {
-            
-            PlayerScrollView(data: self.$data)
-            
             VStack {
-                
                 HStack {
                     Button {
                         self.top = 0
                     } label: {
-                        Image(systemName: "house.circle.fill")
-                            .foregroundColor(.white)
-                            .font(.system(size: 36))
+                        Image(systemName: "house.fill")
+                            .foregroundColor(Colors.Menu.icon)
+                            .font(.system(size: 28))
                     }
                     
                     Spacer()
@@ -33,42 +29,42 @@ struct ContentView: View {
                     Button {
                         self.top = 1
                     } label: {
-                        Image(systemName: "star.circle.fill")
-                            .font(.system(size: 36))
-                            .foregroundColor(.white)
+                        Image(systemName: "bookmark.fill")
+                            .font(.system(size: 28))
+                            .foregroundColor(Colors.Menu.icon)
                     }
                 }
-                .padding(.top, 48)
-                .padding(.horizontal, 24)
+//                .padding(.top, 48)
+//                .padding(.horizontal, 24)
                 
-                Spacer()
+                PlayerScrollView(data: self.$data)
                 
-                HStack {
-                    Spacer()
-                    
-                    VStack (spacing: 16) {
-                        Button {
-                            self.top = 0
-                        } label: {
-                            Image(systemName: "heart.fill")
-                                .foregroundColor(.white)
-                                .font(.system(size: 36))
-                        }
-                                                
-                        Button {
-                            self.top = 1
-                        } label: {
-                            Image(systemName: "questionmark.bubble.fill")
-                                .foregroundColor(.white)
-                                .font(.system(size: 36))
-                        }
-                    }
-                }
-                .padding(.bottom, 55)
-                .padding(.trailing)
+//                HStack {
+//                    Spacer()
+//
+//                    VStack (spacing: 16) {
+//                        Button {
+//                            self.top = 0
+//                        } label: {
+//                            Image(systemName: "heart.fill")
+////                                .foregroundColor(.white)
+//                                .font(.system(size: 36))
+//                        }
+//
+//                        Button {
+//                            self.top = 1
+//                        } label: {
+//                            Image(systemName: "questionmark.bubble.fill")
+////                                .foregroundColor(.white)
+//                                .font(.system(size: 36))
+//                        }
+//                    }
+//                }
+//                .padding(.bottom, 55)
+//                .padding(.trailing)
             }
         }
-        .padding()
+        .padding(.horizontal)
 //        .ignoresSafeArea()
     }
 }
