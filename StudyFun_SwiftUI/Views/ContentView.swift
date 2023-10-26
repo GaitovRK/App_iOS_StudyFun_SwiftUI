@@ -14,30 +14,93 @@ struct ContentView: View {
         
     var body: some View {
         ZStack {
+            PlayerScrollView(data: self.$data)
+
             VStack {
-                HStack {
+                HStack(spacing: 25) {
                     Button {
                         self.top = 0
                     } label: {
-                        Image(systemName: "house.fill")
-                            .foregroundColor(Colors.Menu.icon)
-                            .font(.system(size: 28))
+                        Text("Home")
+                            .foregroundColor(self.top == 0 ? .black : Color.black.opacity(0.45))
+                            .fontWeight(self.top == 0 ? .bold : .none)
+                            .padding(.vertical)
                     }
                     
-                    Spacer()
+//                    Spacer()
                     
                     Button {
                         self.top = 1
                     } label: {
-                        Image(systemName: "bookmark.fill")
-                            .font(.system(size: 28))
-                            .foregroundColor(Colors.Menu.icon)
-                    }
+                        Text("My Courses")
+                            .foregroundColor(self.top == 0 ? .black : Color.black.opacity(0.45))
+                            .fontWeight(self.top == 0 ? .bold : .none)
+                            .padding(.vertical)                   }
                 }
+                .padding(.top, 50)
+                
+                Spacer()
+                
+                HStack{
+                    
+                    Spacer()
+                    
+                    VStack(spacing: 35){
+                        
+                        Button(action: {
+                            
+                        }) {
+                            
+                            VStack(spacing: 8){
+                                
+                                Image(systemName: "heart.circle.fill")
+//                                    .renderingMode(.original)
+                                    .font(.title)
+                                    .foregroundColor(.black)
+                                
+                                Text("22K")
+                                    .foregroundColor(.black)
+                            }
+                        }
+                        
+                        Button(action: {
+                            
+                        }) {
+                            
+                            VStack(spacing: 8){
+                                
+                                Image(systemName: "message.fill")
+                                    .font(.title)
+                                    .foregroundColor(.black)
+                                
+                                Text("1021")
+                                    .foregroundColor(.black)
+                            }
+                        }
+                        
+                        Button(action: {
+                            
+                        }) {
+                            
+                            VStack(spacing: 8){
+                                
+                                Image(systemName: "arrowshape.turn.up.right.fill")
+                                    .renderingMode(.original)
+                                    .font(.title)
+                                    .foregroundColor(.black)
+                                
+                                Text("Share")
+                                    .foregroundColor(.black)
+                            }
+                        }
+                    }
+                    .padding(.bottom, 55)
+                    .padding(.trailing)
+                }
+
 //                .padding(.top, 48)
 //                .padding(.horizontal, 24)
                 
-                PlayerScrollView(data: self.$data)
                 
 //                HStack {
 //                    Spacer()
@@ -64,8 +127,9 @@ struct ContentView: View {
 //                .padding(.trailing)
             }
         }
-        .padding(.horizontal)
-//        .ignoresSafeArea()
+//        .padding(.horizontal)
+        .background(Color.black.edgesIgnoringSafeArea(.all))
+        .edgesIgnoringSafeArea(.all)
     }
 }
 
