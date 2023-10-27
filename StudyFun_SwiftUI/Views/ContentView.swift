@@ -26,6 +26,12 @@ struct ContentView: View {
                     
                     Spacer()
                     
+                    Text("Unit 1. Lesson 1")
+                        .font(.system(size: 24, weight: .bold, design: .rounded))
+                        .foregroundColor(.black)
+                    
+                    Spacer()
+                    
                     Button {
                         self.top = 1
                     } label: {

@@ -23,6 +23,7 @@
 		5CEE09302AEA60DE004A07A3 /* lesson3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE092D2AEA60DE004A07A3 /* lesson3.mp4 */; };
 		5CEE09312AEA60DE004A07A3 /* lesson2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE092E2AEA60DE004A07A3 /* lesson2.mp4 */; };
 		5CEE09322AEA60DE004A07A3 /* lesson1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE092F2AEA60DE004A07A3 /* lesson1.mp4 */; };
+		5CEE09342AEBC052004A07A3 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE09332AEBC052004A07A3 /* LoaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		5CEE092D2AEA60DE004A07A3 /* lesson3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lesson3.mp4; sourceTree = "<group>"; };
 		5CEE092E2AEA60DE004A07A3 /* lesson2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lesson2.mp4; sourceTree = "<group>"; };
 		5CEE092F2AEA60DE004A07A3 /* lesson1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lesson1.mp4; sourceTree = "<group>"; };
+		5CEE09332AEBC052004A07A3 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				5CED26142AE6A7C900DE647B /* QuizView.swift */,
 				5CED26182AE6C9E300DE647B /* OptionsGridView.swift */,
 				5C912F712AE7B62800AEBF4E /* QuizCompletedView.swift */,
+				5CEE09332AEBC052004A07A3 /* LoaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				5C6C4FEC2AE1616800233391 /* ContentView.swift in Sources */,
 				5CED26192AE6C9E300DE647B /* OptionsGridView.swift in Sources */,
 				5C6C4FFE2AE166A000233391 /* Player.swift in Sources */,
+				5CEE09342AEBC052004A07A3 /* LoaderView.swift in Sources */,
 				5C6C50042AE18F9500233391 /* PlayerView.swift in Sources */,
 				5CED26152AE6A7C900DE647B /* QuizView.swift in Sources */,
 				5CED26172AE6C76200DE647B /* QuizManagerVM.swift in Sources */,

@@ -22,7 +22,7 @@ struct PlayerView : View {
                     
                     Player(player: self.data[i].player)
                         // full screensize because were going to make paging...
-                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+//                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 //                        .offset(y: -5)
                     
                     if self.data[i].replay{
@@ -62,6 +62,10 @@ struct PlayerView : View {
                 // enabling replay button....
                 self.data[0].replay = true
             }
+        }
+        
+        .onDisappear {
+            self.data[0].player.pause()
         }
     }
 }
