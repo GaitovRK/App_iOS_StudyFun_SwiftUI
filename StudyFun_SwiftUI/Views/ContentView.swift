@@ -15,31 +15,31 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             VStack {
-                HStack {
-                    Button {
-                        self.top = 0
-                    } label: {
-                        Image(systemName: "house.fill")
-                            .foregroundColor(Colors.Menu.icon)
-                            .font(.system(size: 28))
-                    }
-                    
-                    Spacer()
-                    
-                    Text("Unit 1. Lesson 1")
-                        .font(.system(size: 24, weight: .bold, design: .rounded))
-                        .foregroundColor(.black)
-                    
-                    Spacer()
-                    
-                    Button {
-                        self.top = 1
-                    } label: {
-                        Image(systemName: "bookmark.fill")
-                            .font(.system(size: 28))
-                            .foregroundColor(Colors.Menu.icon)
-                    }
-                }
+//                HStack {
+//                    Button {
+//                        self.top = 0
+//                    } label: {
+//                        Image(systemName: "house.fill")
+//                            .foregroundColor(Colors.Menu.icon)
+//                            .font(.system(size: 28))
+//                    }
+//                    
+//                    Spacer()
+//                    
+//                    Text("Unit 1. Lesson 1")
+//                        .font(.system(size: 24, weight: .bold, design: .rounded))
+//                        .foregroundColor(.black)
+//                    
+//                    Spacer()
+//                    
+//                    Button {
+//                        self.top = 1
+//                    } label: {
+//                        Image(systemName: "bookmark.fill")
+//                            .font(.system(size: 28))
+//                            .foregroundColor(Colors.Menu.icon)
+//                    }
+//                }
 //                .padding(.top, 48)
 //                .padding(.horizontal, 24)
                 

@@ -120,7 +120,7 @@ struct PlayerScrollView : View {
                             
                             // doing it for first video because scrollview didnt dragged yet...
                             
-                            self.data[i].player.play()
+//                            self.data[i].player.play()
                             
                             self.data[i].player.actionAtItemEnd = .none
                             

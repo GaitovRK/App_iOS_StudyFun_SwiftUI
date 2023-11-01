@@ -82,6 +82,7 @@ struct Header: View {
     }
 }
 
+//MARK: Scroll Views
 
 struct CoursesScrollView: View {
     let courses: [CourseModel]
@@ -111,12 +112,9 @@ struct CoursesScrollView: View {
                 ForEach(courses) { course in
                     CourseBox(image: course.image, title: course.title, subtitle: course.subtitle)
                 }
-                
-                
             }
             .padding()
         }
-        
     }
 }
 
@@ -158,6 +156,42 @@ struct CategoriesScrollView: View {
     }
 }
 
+
+struct PodcastsScrollView: View {
+    let podcasts: [CourseModel]
+    
+    var body: some View {
+        
+        HStack{
+            
+            Text("TeacherX Podcasts")
+                .font(.system(size: 20, weight: .medium))
+            
+            Spacer()
+            
+            Button(action: {
+                
+            }) {
+                
+                Text("View all").foregroundColor(.gray)
+            }
+            
+        }.padding(.horizontal)
+        
+        ScrollView(.horizontal, showsIndicators: false) {
+            
+            HStack(spacing: 20){
+                
+                ForEach(podcasts) { podcast in
+                    PodcastBox(image: podcast.image, title: podcast.title, subtitle: podcast.subtitle)
+                }
+            }
+            .padding()
+        }
+        
+    }
+}
+
 //MARK: Box Views
 
 struct CourseBox: View {
@@ -166,12 +200,12 @@ struct CourseBox: View {
     var subtitle: String
     
     var body: some View {
-        Button(action: {
-            
-        }) {
-            
+        
+        NavigationLink {
+            ContentView()
+                .navigationTitle("Communication")
+        } label: {
             VStack(spacing: 6){
-                
                 Image(image)
                     .resizable()
                     .scaledToFill()
@@ -188,8 +222,6 @@ struct CourseBox: View {
                 
                     .foregroundColor(.gray)
                     .font(.system(size: 12, weight: .medium))
-                
-                
             }
         }
     }
@@ -238,10 +270,11 @@ struct PodcastBox: View {
     var subtitle: String
     
     var body: some View {
-        Button(action: {
-            
-        }) {
-            
+        
+        NavigationLink {
+            PodcastView()
+                .navigationTitle("StudyX")
+        } label: {
             ZStack{
                 
                 Image(image)
@@ -263,41 +296,6 @@ struct PodcastBox: View {
                     .font(.system(size: 20, weight: .bold))
             }
         }
-    }
-}
-
-struct PodcastsScrollView: View {
-    let podcasts: [CourseModel]
-    
-    var body: some View {
-        
-        HStack{
-            
-            Text("TeacherX Podcasts")
-                .font(.system(size: 20, weight: .medium))
-            
-            Spacer()
-            
-            Button(action: {
-                
-            }) {
-                
-                Text("View all").foregroundColor(.gray)
-            }
-            
-        }.padding(.horizontal)
-        
-        ScrollView(.horizontal, showsIndicators: false) {
-            
-            HStack(spacing: 20){
-                
-                ForEach(podcasts) { podcast in
-                    PodcastBox(image: podcast.image, title: podcast.title, subtitle: podcast.subtitle)
-                }
-            }
-            .padding()
-        }
-        
     }
 }
 
