@@ -9,41 +9,37 @@ import SwiftUI
 
 struct Home: View {
     @State var currentTab = "house"
-    
-    var courses = [Course(id: 0, image: "module0", title: "Sports Benefits", subtitle: "Become healthier"),
-                   Course(id: 1, image: "module1", title: "Daily Life", subtitle: "Manage your day"),
-                   Course(id: 2, image: "module2", title: "Healthy Food", subtitle: "Stay energetic"),
-                   Course(id: 3, image: "module3", title: "Let's Plant", subtitle: "Make the world better")]
-    
-    let categories = [Course(id: 0, image: "module4", title: "Health", subtitle: "Become healthier"),
-                      Course(id: 1, image: "module5", title: "Personal Development", subtitle: "Manage your day"),
-                      Course(id: 2, image: "module6", title: "Cognitive Skills", subtitle: "Stay energetic"),
-                      Course(id: 3, image: "module3", title: "Self Awareness", subtitle: "Make the world better")]
-    
-    let podcasts = [Course(id: 0, image: "module6", title: "Episode 1: About TeacherX", subtitle: "Become healthier"),
-                      Course(id: 1, image: "module5", title: "Episode 7: ETZ Conference", subtitle: "Manage your day"),
-                      Course(id: 2, image: "module4", title: "Episode 12: Cognitive Skills", subtitle: "Stay energetic"),
-                      Course(id: 3, image: "module3", title: "Self Awareness", subtitle: "Make the world better")]
-    
+    let categories = CourseModel.categories
+    let courses = CourseModel.courses
+    let podcasts = CourseModel.podcasts
+
     var body: some View {
-        VStack{
-            Header()
-            
-            ScrollView {
-                CategoriesScrollView(courses: categories)
+        NavigationView {
+            VStack{
+//                Header()
+//                    .navigationTitle("StudyX")
+//                    .navigationBarTitleDisplayMode(.inline)
                 
-                CourseScrollView(courses: courses)
+
                 
-                PodcastsView(podcasts: podcasts)
-            }
-            
-            HStack {
-                ForEach(["house", "bookmark", "person"], id: \.self) { image in
-                    TabBarButtonView(image: image, currentTab: $currentTab)
+                ScrollView {
+                    CategoriesScrollView(courses: categories)
+                    
+                    CoursesScrollView(courses: courses)
+                    
+                    PodcastsScrollView(podcasts: podcasts)
                 }
+                .navigationTitle("StudyX")
+                .navigationBarTitleDisplayMode(.inline)
+                
+                HStack {
+                    ForEach(["house", "bookmark", "person"], id: \.self) { image in
+                        TabBarButtonView(image: image, currentTab: $currentTab)
+                    }
+                }
+                .padding()
+                .overlay(Divider(), alignment: .top)
             }
-            .padding()
-            .overlay(Divider(), alignment: .top)
         }
     }
 }
@@ -87,8 +83,8 @@ struct Header: View {
 }
 
 
-struct CourseScrollView: View {
-    let courses: [Course]
+struct CoursesScrollView: View {
+    let courses: [CourseModel]
     
     var body: some View {
         
@@ -113,7 +109,7 @@ struct CourseScrollView: View {
             HStack(spacing: 20){
                 
                 ForEach(courses) { course in
-                    CourseView(image: course.image, title: course.title, subtitle: course.subtitle)
+                    CourseBox(image: course.image, title: course.title, subtitle: course.subtitle)
                 }
                 
                 
@@ -126,7 +122,7 @@ struct CourseScrollView: View {
 
 
 struct CategoriesScrollView: View {
-    let courses: [Course]
+    let courses: [CourseModel]
     
     var body: some View {
         
@@ -151,7 +147,7 @@ struct CategoriesScrollView: View {
             HStack(spacing: 20){
                 
                 ForEach(courses) { course in
-                    CategoryView(image: course.image, title: course.title, subtitle: course.subtitle)
+                    CategoryBox(image: course.image, title: course.title, subtitle: course.subtitle)
                 }
                 
                 
@@ -162,15 +158,9 @@ struct CategoriesScrollView: View {
     }
 }
 
-struct Course: Identifiable {
-    var id: Int
-    var image: String
-    var title: String
-    var subtitle: String
-}
+//MARK: Box Views
 
-
-struct CourseView: View {
+struct CourseBox: View {
     var image: String
     var title: String
     var subtitle: String
@@ -205,7 +195,7 @@ struct CourseView: View {
     }
 }
 
-struct CategoryView: View {
+struct CategoryBox: View {
     var image: String
     var title: String
     var subtitle: String
@@ -242,7 +232,7 @@ struct CategoryView: View {
 }
 
 
-struct PodcastView: View {
+struct PodcastBox: View {
     var image: String
     var title: String
     var subtitle: String
@@ -276,8 +266,8 @@ struct PodcastView: View {
     }
 }
 
-struct PodcastsView: View {
-    let podcasts: [Course]
+struct PodcastsScrollView: View {
+    let podcasts: [CourseModel]
     
     var body: some View {
         
@@ -302,10 +292,8 @@ struct PodcastsView: View {
             HStack(spacing: 20){
                 
                 ForEach(podcasts) { podcast in
-                    PodcastView(image: podcast.image, title: podcast.title, subtitle: podcast.subtitle)
+                    PodcastBox(image: podcast.image, title: podcast.title, subtitle: podcast.subtitle)
                 }
-                
-                
             }
             .padding()
         }
@@ -330,7 +318,6 @@ struct TabBarButton: View {
             .foregroundColor(currentTab == image ? .gray : .white)
             .frame(maxWidth: .infinity)
         }
-        
     }
 }
 

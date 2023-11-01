@@ -34,6 +34,7 @@
 		5CEE09472AEC47DB004A07A3 /* module2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE09402AEC47DB004A07A3 /* module2.png */; };
 		5CEE09482AEC47DB004A07A3 /* module1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE09412AEC47DB004A07A3 /* module1.png */; };
 		5CEE094A2AED2404004A07A3 /* MyCoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE09492AED2404004A07A3 /* MyCoursesView.swift */; };
+		5CF7A53B2AF2542D00623A9C /* CourseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CF7A53A2AF2542D00623A9C /* CourseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		5CEE09402AEC47DB004A07A3 /* module2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = module2.png; sourceTree = "<group>"; };
 		5CEE09412AEC47DB004A07A3 /* module1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = module1.png; sourceTree = "<group>"; };
 		5CEE09492AED2404004A07A3 /* MyCoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoursesView.swift; sourceTree = "<group>"; };
+		5CF7A53A2AF2542D00623A9C /* CourseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			children = (
 				5C6C50052AE18FCA00233391 /* VideoModel.swift */,
 				5CED260E2AE6A55B00DE647B /* QuizModel.swift */,
+				5CF7A53A2AF2542D00623A9C /* CourseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				5C912F722AE7B62800AEBF4E /* QuizCompletedView.swift in Sources */,
 				5CED260F2AE6A55B00DE647B /* QuizModel.swift in Sources */,
 				5CEE09362AEBC873004A07A3 /* Home.swift in Sources */,
+				5CF7A53B2AF2542D00623A9C /* CourseModel.swift in Sources */,
 				5C6C4FEA2AE1616800233391 /* StudyFun_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
