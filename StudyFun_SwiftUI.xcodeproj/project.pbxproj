@@ -23,7 +23,17 @@
 		5CEE09302AEA60DE004A07A3 /* lesson3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE092D2AEA60DE004A07A3 /* lesson3.mp4 */; };
 		5CEE09312AEA60DE004A07A3 /* lesson2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE092E2AEA60DE004A07A3 /* lesson2.mp4 */; };
 		5CEE09322AEA60DE004A07A3 /* lesson1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE092F2AEA60DE004A07A3 /* lesson1.mp4 */; };
-		5CEE09342AEBC052004A07A3 /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE09332AEBC052004A07A3 /* LoaderView.swift */; };
+		5CEE09362AEBC873004A07A3 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE09352AEBC873004A07A3 /* Home.swift */; };
+		5CEE09382AEBC90F004A07A3 /* LessonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE09372AEBC90F004A07A3 /* LessonView.swift */; };
+		5CEE093A2AEBCD43004A07A3 /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE09392AEBCD43004A07A3 /* CustomVideoPlayer.swift */; };
+		5CEE09422AEC47DB004A07A3 /* module5.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE093B2AEC47DB004A07A3 /* module5.png */; };
+		5CEE09432AEC47DB004A07A3 /* module4.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE093C2AEC47DB004A07A3 /* module4.png */; };
+		5CEE09442AEC47DB004A07A3 /* module6.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE093D2AEC47DB004A07A3 /* module6.png */; };
+		5CEE09452AEC47DB004A07A3 /* module3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE093E2AEC47DB004A07A3 /* module3.png */; };
+		5CEE09462AEC47DB004A07A3 /* module0.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE093F2AEC47DB004A07A3 /* module0.png */; };
+		5CEE09472AEC47DB004A07A3 /* module2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE09402AEC47DB004A07A3 /* module2.png */; };
+		5CEE09482AEC47DB004A07A3 /* module1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CEE09412AEC47DB004A07A3 /* module1.png */; };
+		5CEE094A2AED2404004A07A3 /* MyCoursesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEE09492AED2404004A07A3 /* MyCoursesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +54,17 @@
 		5CEE092D2AEA60DE004A07A3 /* lesson3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lesson3.mp4; sourceTree = "<group>"; };
 		5CEE092E2AEA60DE004A07A3 /* lesson2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lesson2.mp4; sourceTree = "<group>"; };
 		5CEE092F2AEA60DE004A07A3 /* lesson1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = lesson1.mp4; sourceTree = "<group>"; };
-		5CEE09332AEBC052004A07A3 /* LoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		5CEE09352AEBC873004A07A3 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		5CEE09372AEBC90F004A07A3 /* LessonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonView.swift; sourceTree = "<group>"; };
+		5CEE09392AEBCD43004A07A3 /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
+		5CEE093B2AEC47DB004A07A3 /* module5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = module5.png; sourceTree = "<group>"; };
+		5CEE093C2AEC47DB004A07A3 /* module4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = module4.png; sourceTree = "<group>"; };
+		5CEE093D2AEC47DB004A07A3 /* module6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = module6.png; sourceTree = "<group>"; };
+		5CEE093E2AEC47DB004A07A3 /* module3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = module3.png; sourceTree = "<group>"; };
+		5CEE093F2AEC47DB004A07A3 /* module0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = module0.png; sourceTree = "<group>"; };
+		5CEE09402AEC47DB004A07A3 /* module2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = module2.png; sourceTree = "<group>"; };
+		5CEE09412AEC47DB004A07A3 /* module1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = module1.png; sourceTree = "<group>"; };
+		5CEE09492AED2404004A07A3 /* MyCoursesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoursesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +135,10 @@
 				5CED26142AE6A7C900DE647B /* QuizView.swift */,
 				5CED26182AE6C9E300DE647B /* OptionsGridView.swift */,
 				5C912F712AE7B62800AEBF4E /* QuizCompletedView.swift */,
-				5CEE09332AEBC052004A07A3 /* LoaderView.swift */,
+				5CEE09352AEBC873004A07A3 /* Home.swift */,
+				5CEE09372AEBC90F004A07A3 /* LessonView.swift */,
+				5CEE09392AEBCD43004A07A3 /* CustomVideoPlayer.swift */,
+				5CEE09492AED2404004A07A3 /* MyCoursesView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -134,6 +157,13 @@
 			children = (
 				5C6C4FE92AE1616800233391 /* StudyFun_SwiftUIApp.swift */,
 				5C6C4FED2AE1616800233391 /* Assets.xcassets */,
+				5CEE093F2AEC47DB004A07A3 /* module0.png */,
+				5CEE09412AEC47DB004A07A3 /* module1.png */,
+				5CEE09402AEC47DB004A07A3 /* module2.png */,
+				5CEE093E2AEC47DB004A07A3 /* module3.png */,
+				5CEE093C2AEC47DB004A07A3 /* module4.png */,
+				5CEE093B2AEC47DB004A07A3 /* module5.png */,
+				5CEE093D2AEC47DB004A07A3 /* module6.png */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -198,9 +228,16 @@
 			files = (
 				5CEE09312AEA60DE004A07A3 /* lesson2.mp4 in Resources */,
 				5C6C4FF12AE1616800233391 /* Preview Assets.xcassets in Resources */,
+				5CEE09452AEC47DB004A07A3 /* module3.png in Resources */,
+				5CEE09442AEC47DB004A07A3 /* module6.png in Resources */,
+				5CEE09472AEC47DB004A07A3 /* module2.png in Resources */,
+				5CEE09482AEC47DB004A07A3 /* module1.png in Resources */,
+				5CEE09432AEC47DB004A07A3 /* module4.png in Resources */,
 				5CEE09322AEA60DE004A07A3 /* lesson1.mp4 in Resources */,
 				5CEE09302AEA60DE004A07A3 /* lesson3.mp4 in Resources */,
 				5C6C4FEE2AE1616800233391 /* Assets.xcassets in Resources */,
+				5CEE09462AEC47DB004A07A3 /* module0.png in Resources */,
+				5CEE09422AEC47DB004A07A3 /* module5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,13 +252,16 @@
 				5C6C50062AE18FCA00233391 /* VideoModel.swift in Sources */,
 				5C6C4FEC2AE1616800233391 /* ContentView.swift in Sources */,
 				5CED26192AE6C9E300DE647B /* OptionsGridView.swift in Sources */,
+				5CEE09382AEBC90F004A07A3 /* LessonView.swift in Sources */,
 				5C6C4FFE2AE166A000233391 /* Player.swift in Sources */,
-				5CEE09342AEBC052004A07A3 /* LoaderView.swift in Sources */,
 				5C6C50042AE18F9500233391 /* PlayerView.swift in Sources */,
+				5CEE094A2AED2404004A07A3 /* MyCoursesView.swift in Sources */,
+				5CEE093A2AEBCD43004A07A3 /* CustomVideoPlayer.swift in Sources */,
 				5CED26152AE6A7C900DE647B /* QuizView.swift in Sources */,
 				5CED26172AE6C76200DE647B /* QuizManagerVM.swift in Sources */,
 				5C912F722AE7B62800AEBF4E /* QuizCompletedView.swift in Sources */,
 				5CED260F2AE6A55B00DE647B /* QuizModel.swift in Sources */,
+				5CEE09362AEBC873004A07A3 /* Home.swift in Sources */,
 				5C6C4FEA2AE1616800233391 /* StudyFun_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

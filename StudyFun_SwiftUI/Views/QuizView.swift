@@ -17,10 +17,10 @@ struct QuizView: View {
 //                .aspectRatio(contentMode: ContentMode.fill)
 //                .ignoresSafeArea()
             
-//            LinearGradient(colors: [Colors.Menu.greenBackground, Colors.Menu.background], startPoint: .topLeading, endPoint: .bottomTrailing)
-//                .ignoresSafeArea()
-            Colors.Menu.greenBackground
+            LinearGradient(colors: [Colors.Menu.greenBackground, Colors.Menu.background], startPoint: .topLeading, endPoint: .bottomTrailing)
                 .ignoresSafeArea()
+//            Colors.Menu.greenBackground
+//                .ignoresSafeArea()
             
             if quizManagerVM.model.quizCompleted {
                 QuizCompletedView(quizManagerVM: quizManagerVM)

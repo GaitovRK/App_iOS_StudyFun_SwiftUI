@@ -16,7 +16,7 @@ struct VideoModel: Identifiable {
     
     static var sampleData = [
 //        VideoModel(id: 1, player: AVPlayer(url: Bundle.main.url(forResource: "lesson1", withExtension: "mp4")!), replay: false),
-        VideoModel(id: 2, player: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "lesson1", ofType: "mp4")!)), replay: false),
+        VideoModel(id: 1, player: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "lesson1", ofType: "mp4")!)), replay: false),
         VideoModel(id: 2, player: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "lesson2", ofType: "mp4")!)), replay: false),
         VideoModel(id: 3, player: AVPlayer(url: URL(fileURLWithPath: Bundle.main.path(forResource: "lesson3", ofType: "mp4")!)), replay: false)
     ]
