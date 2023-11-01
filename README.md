@@ -2,4 +2,4 @@
 ### Application createx with SwiftUI Framework
 
 ## Demo
-[![Watch the video]([https://i.stack.imgur.com/Vp2cE.png](https://drive.google.com/file/d/1p1VUqPwWGDhXlKCPuuuebauUESSFfG21/view?usp=drive_link)https://drive.google.com/file/d/1p1VUqPwWGDhXlKCPuuuebauUESSFfG21/view?usp=drive_link)]
+![ezgif-5-95d81fbffb](https://github.com/GaitovRK/StudyFun_SwiftUI/assets/100293747/ba3b4e22-8f1a-4790-8640-ff898fc40d2f)
