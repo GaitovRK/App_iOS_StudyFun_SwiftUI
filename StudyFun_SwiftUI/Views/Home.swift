@@ -29,8 +29,15 @@ struct Home: View {
                     
                     PodcastsScrollView(podcasts: podcasts)
                 }
-                .navigationTitle("StudyX")
                 .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .principal) { // <3>
+                        HStack(spacing: 0) {
+                            Text("Study").font(.system(size: 30, weight: .bold))
+                            Text("X").font(.system(size: 30, weight: .heavy)).foregroundColor(Colors.Menu.icon)
+                        }
+                    }
+                }
                 
                 HStack {
                     ForEach(["house", "bookmark", "person"], id: \.self) { image in
@@ -41,6 +48,7 @@ struct Home: View {
                 .overlay(Divider(), alignment: .top)
             }
         }
+        .tint(.red)
     }
 }
 
@@ -203,7 +211,15 @@ struct CourseBox: View {
         
         NavigationLink {
             ContentView()
-                .navigationTitle("Communication")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .principal) { // <3>
+                        HStack(spacing: 0) {
+                            Text("Study").font(.system(size: 30, weight: .bold))
+                            Text("X").font(.system(size: 30, weight: .heavy)).foregroundColor(Colors.Menu.icon)
+                        }
+                    }
+                }
         } label: {
             VStack(spacing: 6){
                 Image(image)
@@ -236,6 +252,15 @@ struct CategoryBox: View {
         
         NavigationLink {
             MyCoursesView()
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .principal) { // <3>
+                        HStack(spacing: 0) {
+                            Text("Study").font(.system(size: 30, weight: .bold))
+                            Text("X").font(.system(size: 30, weight: .heavy)).foregroundColor(Colors.Menu.icon)
+                        }
+                    }
+                }
         } label: {
             ZStack{
                 Image(image)
@@ -256,8 +281,6 @@ struct CategoryBox: View {
                     .foregroundColor(.white)
                     .font(.system(size: 14, weight: .bold))
                     .offset(x: 5, y: -30)
-                    
-                
             }
         }
     }
@@ -273,7 +296,15 @@ struct PodcastBox: View {
         
         NavigationLink {
             PodcastView()
-                .navigationTitle("StudyX")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .principal) { // <3>
+                        HStack(spacing: 0) {
+                            Text("Study").font(.system(size: 30, weight: .bold))
+                            Text("X").font(.system(size: 30, weight: .heavy)).foregroundColor(Colors.Menu.icon)
+                        }
+                    }
+                }
         } label: {
             ZStack{
                 

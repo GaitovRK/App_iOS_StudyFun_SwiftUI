@@ -12,7 +12,7 @@ struct MyCoursesView: View {
     
     var body: some View {
         VStack{
-            Header()
+//            Header()
             
             HStack{
                 Text("My Courses")
