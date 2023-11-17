@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		5C3D7F462AF3D8DA0033B8D2 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3D7F452AF3D8DA0033B8D2 /* MainTabView.swift */; };
 		5C3D7F492AF3DF7C0033B8D2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3D7F482AF3DF7C0033B8D2 /* ProfileView.swift */; };
+		5C4B04842B074AA700523017 /* CourseContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B04832B074AA700523017 /* CourseContentView.swift */; };
 		5C6C4FEA2AE1616800233391 /* StudyFun_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C4FE92AE1616800233391 /* StudyFun_SwiftUIApp.swift */; };
-		5C6C4FEC2AE1616800233391 /* CourseContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C4FEB2AE1616800233391 /* CourseContentView.swift */; };
 		5C6C4FEE2AE1616800233391 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C6C4FED2AE1616800233391 /* Assets.xcassets */; };
 		5C6C4FF12AE1616800233391 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C6C4FF02AE1616800233391 /* Preview Assets.xcassets */; };
 		5C6C4FFE2AE166A000233391 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C6C4FFD2AE166A000233391 /* Player.swift */; };
@@ -37,9 +37,9 @@
 /* Begin PBXFileReference section */
 		5C3D7F452AF3D8DA0033B8D2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		5C3D7F482AF3DF7C0033B8D2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		5C4B04832B074AA700523017 /* CourseContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseContentView.swift; sourceTree = "<group>"; };
 		5C6C4FE62AE1616800233391 /* StudyFun_SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyFun_SwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6C4FE92AE1616800233391 /* StudyFun_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyFun_SwiftUIApp.swift; sourceTree = "<group>"; };
-		5C6C4FEB2AE1616800233391 /* CourseContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseContentView.swift; sourceTree = "<group>"; };
 		5C6C4FED2AE1616800233391 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5C6C4FF02AE1616800233391 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5C6C4FFD2AE166A000233391 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -168,7 +168,7 @@
 				5CEE09392AEBCD43004A07A3 /* CustomVideoPlayer.swift */,
 				5C6C50032AE18F9500233391 /* PlayerView.swift */,
 				5C6C50012AE18F4300233391 /* PlayerScrollView.swift */,
-				5C6C4FEB2AE1616800233391 /* CourseContentView.swift */,
+				5C4B04832B074AA700523017 /* CourseContentView.swift */,
 			);
 			name = CourseContent;
 			sourceTree = "<group>";
@@ -270,7 +270,6 @@
 				5C6C50022AE18F4300233391 /* PlayerScrollView.swift in Sources */,
 				5CC1E8FC2AFA2DE000AF69D5 /* Colors.swift in Sources */,
 				5C6C50062AE18FCA00233391 /* VideoModel.swift in Sources */,
-				5C6C4FEC2AE1616800233391 /* CourseContentView.swift in Sources */,
 				5CED26192AE6C9E300DE647B /* OptionsGridView.swift in Sources */,
 				5CEE09382AEBC90F004A07A3 /* LessonView.swift in Sources */,
 				5C6C4FFE2AE166A000233391 /* Player.swift in Sources */,
@@ -284,6 +283,7 @@
 				5CF7A53D2AF25A9F00623A9C /* PodcastView.swift in Sources */,
 				5CED260F2AE6A55B00DE647B /* QuizModel.swift in Sources */,
 				5CEE09362AEBC873004A07A3 /* HomeView.swift in Sources */,
+				5C4B04842B074AA700523017 /* CourseContentView.swift in Sources */,
 				5C3D7F492AF3DF7C0033B8D2 /* ProfileView.swift in Sources */,
 				5CF7A53B2AF2542D00623A9C /* CourseModel.swift in Sources */,
 				5C6C4FEA2AE1616800233391 /* StudyFun_SwiftUIApp.swift in Sources */,
@@ -421,8 +421,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,8 +450,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
