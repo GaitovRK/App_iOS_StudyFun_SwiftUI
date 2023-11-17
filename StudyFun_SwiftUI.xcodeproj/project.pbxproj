@@ -82,6 +82,14 @@
 			name = ProfilePage;
 			sourceTree = "<group>";
 		};
+		5C4B04852B0750EC00523017 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				5C3D7F452AF3D8DA0033B8D2 /* MainTabView.swift */,
+			);
+			name = Root;
+			sourceTree = "<group>";
+		};
 		5C6C4FDD2AE1616700233391 = {
 			isa = PBXGroup;
 			children = (
@@ -135,11 +143,11 @@
 		5CED26112AE6A76900DE647B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5C4B04852B0750EC00523017 /* Root */,
 				5C3D7F472AF3DF5D0033B8D2 /* ProfilePage */,
 				5CF7A5402AF2714300623A9C /* Menu */,
 				5CF7A53F2AF2712100623A9C /* QuizContent */,
 				5CF7A53E2AF270CC00623A9C /* CourseContent */,
-				5C3D7F452AF3D8DA0033B8D2 /* MainTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
