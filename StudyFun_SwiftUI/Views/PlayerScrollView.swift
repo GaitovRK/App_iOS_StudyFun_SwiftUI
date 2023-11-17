@@ -104,6 +104,7 @@ import AVKit
 //}
 
 
+
 struct PlayerScrollView : View {
     
     @Binding var data : [VideoModel]
@@ -112,26 +113,29 @@ struct PlayerScrollView : View {
         
         TabView {
             ForEach(0..<self.data.count) {i in
-                
+                GeometryReader { proxy in
+
                 ZStack {
-                    VideoPlayer(player: data[i].player)
-                        .aspectRatio(contentMode: .fill)
-                        .onAppear {
-                            
-                            // doing it for first video because scrollview didnt dragged yet...
-                            
-//                            self.data[i].player.play()
-                            
-                            self.data[i].player.actionAtItemEnd = .none
-                            
-                            NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.data[i].player.currentItem, queue: .main) { (_) in
+                        VideoPlayer(player: data[i].player)
+//                            .frame(width: proxy.size.width, height: proxy.size.height)
+                            .aspectRatio(contentMode: .fill)
+                            .onAppear {
                                 
-                                // notification to identify at the end of the video...
+                                // doing it for first video because scrollview didnt dragged yet...
                                 
-                                // enabling replay button....
-                                self.data[i].replay = true
+    //                            self.data[i].player.play()
+                                
+                                self.data[i].player.actionAtItemEnd = .none
+                                
+                                NotificationCenter.default.addObserver(forName: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.data[i].player.currentItem, queue: .main) { (_) in
+                                    
+                                    // notification to identify at the end of the video...
+                                    
+                                    // enabling replay button....
+                                    self.data[i].replay = true
+                                }
                             }
-                        }
+                    }
                         
                     if self.data[i].replay{
                         

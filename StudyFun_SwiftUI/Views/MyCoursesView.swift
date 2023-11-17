@@ -15,27 +15,32 @@ struct MyCoursesView: View {
 //            Header()
             
             HStack{
-                Text("My Courses")
-                Text("Finished")
+                
+                Button {
+                    
+                } label: {
+                    Text("My Courses")
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(.black)
+                }
+
+                Button {
+                    
+                } label: {
+                    Text("Finished")
+                        .font(.system(size: 20))
+                        .foregroundColor(.gray)
+                }
             }
             
             Spacer()
             
             TabView {
-                Text("Home")
-                    .tag("house.fill")
-                LessonView(currentLesson: 1)
-                    .tag("house")
+                Text("Here will be a list of my courses")
             }
             
-            HStack {
-                ForEach(["house", "bookmark", "person"], id: \.self) { image in
-                    TabBarButtonView(image: image, currentTab: $currentTab)
-                }
-            }
-            .padding()
-            .overlay(Divider(), alignment: .top)
-            .background(currentTab == "bookmark" ? .red : .clear)
+            
+            
         }
     }
 }

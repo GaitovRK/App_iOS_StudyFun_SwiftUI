@@ -7,83 +7,26 @@
 
 import SwiftUI
 
-struct Home: View {
+struct HomeView: View {
     @State var currentTab = "house"
-    let categories = CourseModel.categories
+    
+    let categories = [Category(id: 1, name: "Health", color: Colors.lightBlue),
+                      Category(id: 2, name: "Cognitive Skills", color: Colors.lightOrange),
+                      Category(id: 3, name: "Health", color: Colors.lightGreen),
+                      Category(id: 4, name: "Health", color: Colors.pink)
+    ]
     let courses = CourseModel.courses
     let podcasts = CourseModel.podcasts
 
     var body: some View {
+        
         NavigationView {
-            VStack{
-//                Header()
-//                    .navigationTitle("StudyX")
-//                    .navigationBarTitleDisplayMode(.inline)
+            ScrollView {
+                CategoriesScrollView(categories: categories)
                 
-
+                CoursesScrollView(courses: courses)
                 
-                ScrollView {
-                    CategoriesScrollView(courses: categories)
-                    
-                    CoursesScrollView(courses: courses)
-                    
-                    PodcastsScrollView(podcasts: podcasts)
-                }
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .principal) { // <3>
-                        HStack(spacing: 0) {
-                            Text("Study").font(.system(size: 30, weight: .bold))
-                            Text("X").font(.system(size: 30, weight: .heavy)).foregroundColor(Colors.Menu.icon)
-                        }
-                    }
-                }
-                
-                HStack {
-                    ForEach(["house", "bookmark", "person"], id: \.self) { image in
-                        TabBarButtonView(image: image, currentTab: $currentTab)
-                    }
-                }
-                .padding()
-                .overlay(Divider(), alignment: .top)
-            }
-        }
-        .tint(.red)
-    }
-}
-
-
-
-struct Header: View {
-    
-    var body: some View {
-        HStack {
-            
-            Spacer()
-            
-            HStack(spacing: 0){
-                Text("Study")
-                    .font(.system(size: 30))
-                    .font(.title)
-                    .fontWeight(.bold)
-                Text("X")
-                    .font(.system(size: 40))
-                    .fontWeight(.black)
-                    .foregroundColor(.red)
-            }
-            .padding(.leading, 60)
-            
-            
-            Spacer()
-            
-            Button {
-                
-            } label: {
-                Image(systemName: "magnifyingglass")
-                    .padding()
-                    .font(.system(size: 24))
-                    .foregroundColor(.black)
-                    .fontWeight(.light)
+                PodcastsScrollView(podcasts: podcasts)
             }
             
         }
@@ -121,14 +64,21 @@ struct CoursesScrollView: View {
                     CourseBox(image: course.image, title: course.title, subtitle: course.subtitle)
                 }
             }
-            .padding()
+            .padding(.horizontal)
+            .padding(.bottom)
         }
     }
 }
 
+struct Category: Identifiable {
+    var id: Int
+    let name: String
+    let color: Color
+}
+
 
 struct CategoriesScrollView: View {
-    let courses: [CourseModel]
+    let categories: [Category]
     
     var body: some View {
         
@@ -147,20 +97,19 @@ struct CategoriesScrollView: View {
             }
             
         }.padding(.horizontal)
+            .padding(.top)
         
         ScrollView(.horizontal, showsIndicators: false) {
             
             HStack(spacing: 20){
                 
-                ForEach(courses) { course in
-                    CategoryBox(image: course.image, title: course.title, subtitle: course.subtitle)
+                ForEach(categories) { category in
+                    CategoryBox(name: category.name, color: category.color)
                 }
-                
-                
             }
-            .padding()
+            .padding(.horizontal)
+            .padding(.bottom)
         }
-        
     }
 }
 
@@ -194,7 +143,8 @@ struct PodcastsScrollView: View {
                     PodcastBox(image: podcast.image, title: podcast.title, subtitle: podcast.subtitle)
                 }
             }
-            .padding()
+            .padding(.horizontal)
+            .padding(.bottom)
         }
         
     }
@@ -210,16 +160,7 @@ struct CourseBox: View {
     var body: some View {
         
         NavigationLink {
-            ContentView()
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .principal) { // <3>
-                        HStack(spacing: 0) {
-                            Text("Study").font(.system(size: 30, weight: .bold))
-                            Text("X").font(.system(size: 30, weight: .heavy)).foregroundColor(Colors.Menu.icon)
-                        }
-                    }
-                }
+            CourseContentView()
         } label: {
             VStack(spacing: 6){
                 Image(image)
@@ -234,8 +175,7 @@ struct CourseBox: View {
                     .foregroundColor(.black)
                     .font(.system(size: 14, weight: .medium))
                 Text(subtitle)
-                    .frame(width: 150, height: 40, alignment: .topLeading)
-                
+                    .frame(width: 150, height: 20, alignment: .topLeading)
                     .foregroundColor(.gray)
                     .font(.system(size: 12, weight: .medium))
             }
@@ -244,38 +184,34 @@ struct CourseBox: View {
 }
 
 struct CategoryBox: View {
-    var image: String
-    var title: String
-    var subtitle: String
+    var name: String
+    var color: Color
     
     var body: some View {
         
         NavigationLink {
             MyCoursesView()
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .principal) { // <3>
-                        HStack(spacing: 0) {
-                            Text("Study").font(.system(size: 30, weight: .bold))
-                            Text("X").font(.system(size: 30, weight: .heavy)).foregroundColor(Colors.Menu.icon)
-                        }
-                    }
-                }
         } label: {
-            ZStack{
-                Image(image)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 100, height: 100)
-                    .cornerRadius(4)
-                    .shadow(radius: 1)
+            ZStack {
+                ZStack(alignment: .top) {
+//                    Image(image)
+//                        .resizable()
+//                        .scaledToFill()
+//                        .frame(width: 100, height: 100)
+//                        .cornerRadius(4)
+//                        .shadow(radius: 1)
+                    
+                    color
+                        .frame(width: 100, height: 100)
+                        .cornerRadius(4)
+                        .shadow(radius: 1)
+                    
+                    LinearGradient(colors: [Color(white: 0, opacity: 0.7), .clear], startPoint: .top, endPoint: .bottom)
+                        .frame(width: 100, height: 50)
+                        .cornerRadius(4)
+                }
                 
-                LinearGradient(colors: [Color(white: 0, opacity: 0.7), .clear], startPoint: .top, endPoint: .bottom)
-                    .frame(width: 100, height: 100)
-                    .cornerRadius(4)
-
-                
-                Text(title)
+                Text(name)
                     .frame(width: 100, alignment: .topLeading)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.white)
@@ -296,15 +232,15 @@ struct PodcastBox: View {
         
         NavigationLink {
             PodcastView()
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .principal) { // <3>
-                        HStack(spacing: 0) {
-                            Text("Study").font(.system(size: 30, weight: .bold))
-                            Text("X").font(.system(size: 30, weight: .heavy)).foregroundColor(Colors.Menu.icon)
-                        }
-                    }
-                }
+//                .navigationBarTitleDisplayMode(.inline)
+//                .toolbar {
+//                    ToolbarItem(placement: .principal) { // <3>
+//                        HStack(spacing: 0) {
+//                            Text("Study").font(.system(size: 30, weight: .bold))
+//                            Text("X").font(.system(size: 30, weight: .heavy)).foregroundColor(Colors.Menu.icon)
+//                        }
+//                    }
+//                }
         } label: {
             ZStack{
                 
@@ -352,7 +288,7 @@ struct TabBarButton: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home()
+        HomeView()
     }
 }
 

@@ -36,10 +36,10 @@ struct QuizCompletedView: View {
                                 
                         }
                         .padding()
-                        .background {
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(Colors.Menu.icon, lineWidth: 3)
-                        }
+//                        .background {
+//                            RoundedRectangle(cornerRadius: 10)
+//                                .stroke(Colors.Menu.icon, lineWidth: 3)
+//                        }
                         
                         
                         
