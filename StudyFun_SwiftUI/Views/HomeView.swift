@@ -184,30 +184,30 @@ struct CategoryBox: View {
         NavigationLink {
             MyCoursesView()
         } label: {
-            ZStack(alignment: .center) {
+            ZStack(alignment: .top) {
                 
-                    ZStack(alignment: .top) {
-                        color
-                            .frame(width: 100, height: 100)
-                            .cornerRadius(4)
-                            .shadow(radius: 1)
-                        
-                        LinearGradient(colors: [Color.black, .clear], startPoint: .top, endPoint: .bottom)
-                            .frame(height: 50)
-                            .cornerRadius(4)
-                        
-                        Text(name)
-                            .frame(width: 100, alignment: .topLeading)
-                            .multilineTextAlignment(.leading)
-                            .foregroundColor(.white)
-                            .font(.system(size: 14, weight: .bold))
-                            
-                    }
-                    
+                ZStack(alignment: .center) {
+                    color
+                        .frame(width: 100, height: 100)
+                        .cornerRadius(4)
+                        .shadow(radius: 1)
                     
                     Image(systemName: image)
                         .font(.system(size: 30, weight: .bold))
                         .foregroundColor(.white)
+                }
+                
+                LinearGradient(colors: [Color.black.opacity(0.7), .clear], startPoint: .top, endPoint: .bottom)
+                    .frame(height: 55)
+                    .cornerRadius(4)
+                
+                Text(name)
+                    .frame(width: 100, alignment: .topLeading)
+                    .offset(x:5, y: 5)
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(.white)
+                    .font(.system(size: 16, weight: .bold))
+                    
             }
         }
     }
