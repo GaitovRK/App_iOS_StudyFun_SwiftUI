@@ -95,7 +95,7 @@ struct CategoriesScrollView: View {
             HStack(spacing: 20){
                 
                 ForEach(categories) { category in
-                    CategoryBox(name: category.name, color: category.color)
+                    CategoryBox(name: category.name, color: category.color, image: category.image)
                 }
             }
             .padding(.horizontal)
@@ -177,37 +177,37 @@ struct CourseBox: View {
 struct CategoryBox: View {
     var name: String
     var color: Color
+    var image: String
     
     var body: some View {
         
         NavigationLink {
             MyCoursesView()
         } label: {
-            ZStack {
-                ZStack(alignment: .top) {
-//                    Image(image)
-//                        .resizable()
-//                        .scaledToFill()
-//                        .frame(width: 100, height: 100)
-//                        .cornerRadius(4)
-//                        .shadow(radius: 1)
-                    
+            ZStack(alignment: .top) {
+                
+                ZStack(alignment: .center) {
                     color
                         .frame(width: 100, height: 100)
                         .cornerRadius(4)
                         .shadow(radius: 1)
                     
-                    LinearGradient(colors: [Color(white: 0, opacity: 0.7), .clear], startPoint: .top, endPoint: .bottom)
-                        .frame(width: 100, height: 50)
-                        .cornerRadius(4)
+                    Image(systemName: image)
+                        .font(.system(size: 30, weight: .bold))
+                        .foregroundColor(.white)
                 }
+                
+                LinearGradient(colors: [Color.black.opacity(0.7), .clear], startPoint: .top, endPoint: .bottom)
+                    .frame(height: 55)
+                    .cornerRadius(4)
                 
                 Text(name)
                     .frame(width: 100, alignment: .topLeading)
+                    .offset(x:5, y: 5)
                     .multilineTextAlignment(.leading)
                     .foregroundColor(.white)
-                    .font(.system(size: 14, weight: .bold))
-                    .offset(x: 5, y: -30)
+                    .font(.system(size: 16, weight: .bold))
+                    
             }
         }
     }
