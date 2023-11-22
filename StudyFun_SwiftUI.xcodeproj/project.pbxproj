@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C02C4892B0DF45F00683451 /* PodcastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02C4882B0DF45F00683451 /* PodcastModel.swift */; };
+		5C02C48B2B0DF47300683451 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C02C48A2B0DF47300683451 /* CategoryModel.swift */; };
 		5C3D7F462AF3D8DA0033B8D2 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3D7F452AF3D8DA0033B8D2 /* MainTabView.swift */; };
 		5C3D7F492AF3DF7C0033B8D2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C3D7F482AF3DF7C0033B8D2 /* ProfileView.swift */; };
 		5C4B04842B074AA700523017 /* CourseContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4B04832B074AA700523017 /* CourseContentView.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C02C4882B0DF45F00683451 /* PodcastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastModel.swift; sourceTree = "<group>"; };
+		5C02C48A2B0DF47300683451 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		5C3D7F452AF3D8DA0033B8D2 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		5C3D7F482AF3DF7C0033B8D2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5C4B04832B074AA700523017 /* CourseContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseContentView.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				5CED260E2AE6A55B00DE647B /* QuizModel.swift */,
 				5CF7A53A2AF2542D00623A9C /* CourseModel.swift */,
 				5CC1E8FB2AFA2DE000AF69D5 /* Colors.swift */,
+				5C02C4882B0DF45F00683451 /* PodcastModel.swift */,
+				5C02C48A2B0DF47300683451 /* CategoryModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -275,12 +281,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C02C4892B0DF45F00683451 /* PodcastModel.swift in Sources */,
 				5C6C50022AE18F4300233391 /* PlayerScrollView.swift in Sources */,
 				5CC1E8FC2AFA2DE000AF69D5 /* Colors.swift in Sources */,
 				5C6C50062AE18FCA00233391 /* VideoModel.swift in Sources */,
 				5CED26192AE6C9E300DE647B /* OptionsGridView.swift in Sources */,
 				5CEE09382AEBC90F004A07A3 /* LessonView.swift in Sources */,
 				5C6C4FFE2AE166A000233391 /* Player.swift in Sources */,
+				5C02C48B2B0DF47300683451 /* CategoryModel.swift in Sources */,
 				5C6C50042AE18F9500233391 /* PlayerView.swift in Sources */,
 				5CEE094A2AED2404004A07A3 /* MyCoursesView.swift in Sources */,
 				5CEE093A2AEBCD43004A07A3 /* CustomVideoPlayer.swift in Sources */,

@@ -10,13 +10,9 @@ import SwiftUI
 struct HomeView: View {
     @State var currentTab = "house"
     
-    let categories = [Category(id: 1, name: "Health", color: Colors.lightBlue),
-                      Category(id: 2, name: "Cognitive Skills", color: Colors.lightOrange),
-                      Category(id: 3, name: "Health", color: Colors.lightGreen),
-                      Category(id: 4, name: "Health", color: Colors.pink)
-    ]
+    let categories = CategoryModel.categories
     let courses = CourseModel.courses
-    let podcasts = CourseModel.podcasts
+    let podcasts = PodcastModel.podcasts
 
     var body: some View {
         
@@ -70,15 +66,10 @@ struct CoursesScrollView: View {
     }
 }
 
-struct Category: Identifiable {
-    var id: Int
-    let name: String
-    let color: Color
-}
 
 
 struct CategoriesScrollView: View {
-    let categories: [Category]
+    let categories: [CategoryModel]
     
     var body: some View {
         
@@ -115,7 +106,7 @@ struct CategoriesScrollView: View {
 
 
 struct PodcastsScrollView: View {
-    let podcasts: [CourseModel]
+    let podcasts: [PodcastModel]
     
     var body: some View {
         
