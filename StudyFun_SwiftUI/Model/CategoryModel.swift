@@ -10,12 +10,13 @@ import SwiftUI
 
 struct CategoryModel: Identifiable {
     
-        var id: Int
-        let name: String
-        let color: Color
+    var id: Int
+    let name: String
+    let color: Color
+    let image: String
     
-    static let categories = [CategoryModel(id: 1, name: "Health", color: Colors.lightBlue),
-                             CategoryModel(id: 2, name: "Cognitive Skills", color: Colors.lightOrange),
-                             CategoryModel(id: 3, name: "Health", color: Colors.lightGreen),
-                             CategoryModel(id: 4, name: "Health", color: Colors.pink)]
+    static let categories = [CategoryModel(id: 1, name: "Health", color: Colors.lightBlue, image: "heart"),
+                             CategoryModel(id: 2, name: "Cognitive Skills", color: Colors.lightOrange, image: "brain.head.profile"),
+                             CategoryModel(id: 3, name: "Logic", color: Colors.lightGreen, image: "lightbulb"),
+                             CategoryModel(id: 4, name: "Sport", color: Colors.pink, image: "figure.run")]
 }
